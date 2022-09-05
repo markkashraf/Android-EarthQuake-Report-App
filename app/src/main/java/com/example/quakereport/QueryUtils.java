@@ -56,7 +56,8 @@ public class QueryUtils {
             Earthquake thisEarthquake = new Earthquake(
                     current.getDouble("mag") ,
                     current.getString("place") ,
-                    current.getLong("time")
+                    current.getLong("time"),
+                    current.getString("url")
             );
 
             earthquakes.add(thisEarthquake);

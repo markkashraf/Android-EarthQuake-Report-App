@@ -5,20 +5,21 @@ import java.util.Date;
 public class Earthquake {
     private double mag;
     private String place;
-    private String date;
     private long time;
+    private String url;
 
 
 
-    public Earthquake(double mag, String place, String date) {
-        this.mag = mag;
-        this.place = place;
-        this.date = date;
-    }
-    public Earthquake(double mag, String place,  long time) {
+
+    public Earthquake(double mag, String place,  long time , String url) {
         this.mag = mag;
         this.place = place;
         this.time = time;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     public long getTime() {
@@ -33,9 +34,7 @@ public class Earthquake {
         return place;
     }
 
-    public String getDate() {
-        return date;
-    }
+
 
 
 }

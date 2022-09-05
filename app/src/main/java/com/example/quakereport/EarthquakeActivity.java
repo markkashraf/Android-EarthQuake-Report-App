@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 package com.example.quakereport;
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,6 +42,10 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         // Create a new {@link ArrayAdapter} of earthquakes
         EarthquakeAdapter adapter = new EarthquakeAdapter(this, earthquakes);
+        earthquakeListView.setOnItemClickListener((parent,view,position,id)-> {
+            Intent linkIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(earthquakes.get(position).getUrl()));
+            startActivity(linkIntent);
+        });
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
